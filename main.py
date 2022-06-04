@@ -43,3 +43,21 @@ def random_location_picker():
             return random_location
         elif user_input == "n":
             return random_location_picker()
+confirmed_location = random_location_picker()
+print(confirmed_location)
+
+def random_transportation_picker():
+    random_transportation = random_item_picker(transportation)
+
+    user_confirmed_one = False
+    while user_confirmed_one == False:
+        user_input = input(f'Would you like to keep {random_transportation} as your mode of transportation? y/n ')
+        if user_input == "y":
+            print(f'You have choosen to keep {random_transportation} as your mode of transportation.')
+            return random_transportation
+        elif user_input == "n":
+            return random_transportation_picker()
+
+confirmed_transportation = random_transportation_picker()
+print(confirmed_transportation)
+
