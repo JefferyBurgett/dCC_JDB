@@ -61,3 +61,17 @@ def random_transportation_picker():
 confirmed_transportation = random_transportation_picker()
 print(confirmed_transportation)
 
+def random_restaurant_picker():
+    random_restaurant = random_item_picker(restaurants)
+
+    user_confirmed = False
+    while user_confirmed == False:
+        user_input = input(f'Would you like to keep {random_restaurant} as your eating destination? y/n ')
+        if user_input == "y":
+            print(f'You have choosen to keep {random_restaurant} as your mode of destination.')
+            return random_restaurant
+        elif user_input == "n":
+            return random_restaurant_picker()
+
+confirmed_restaurant = random_restaurant_picker()
+print(confirmed_restaurant)
